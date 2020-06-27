@@ -1,0 +1,143 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Montserrat', serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  background-color: #ccc;
+  padding: 15px 20px;
+  z-index: 100;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-item a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item:hover {
+  background-color: #ddd;
+}
+
+.nav-item:hover a {
+  color: darkgreen;
+}
+
+.logo img {
+  width: 175px;
+  vertical-align: middle;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+}
+
+main {
+    padding: 5rem;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 2px rgba(181,174,181,0.7);
+}
+
+#about > h1 {
+  text-align: center;
+}
+
+.description {
+  max-width: 80%;
+  padding: 5rem;
+  font-size: large;
+}
+
+.product {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+iframe {
+    z-index: 0;
+    width: 55%;
+    height: 25rem;
+    border: none;
+    border-radius: 10px;
+}
+
+#contact {
+    width: 100%;
+    padding: 2rem;
+    background-color: #1c1c1c;
+}
+
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#email, .btn {
+    padding: 0.5rem;
+    margin: 0 1rem;
+}
+
+#email {
+    width: 25rem;
+}
+
+@media screen and (max-width: 400px) {
+    .navbar {
+      flex-direction: column;
+    }
+
+    main {
+        padding: 0;
+        padding-top: 6rem;
+    }
+    
+    #about {
+        padding: 2rem;
+    }
+
+    .description {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    .product {
+        padding: 1rem 0.2rem;
+    }
+
+    iframe {
+        width: 90%;
+        height: 12rem;
+    }
+  }
