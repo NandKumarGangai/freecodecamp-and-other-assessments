@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="style.css">
+    <title>Technical Documentation</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <nav id="navbar">
+                <header>
+                    <ul class="nav-links">
+                        <li>
+                            <h2>
+                                JS Arrays
+                            </h2>
+                        </li>
+                        <li>
+                            <a href="#Description" class="nav-link">Description</a>
+                        </li>
+                        <li>
+                            <a href="#Constructor" class="nav-link">Constructor</a>
+                        </li>
+                        <li>
+                            <a href="#Static_properties" class="nav-link">Static properties</a>
+                        </li>
+                        <li>
+                            <a href="#Static_methods" class="nav-link">Static methods</a>
+                        </li>
+                        <li>
+                            <a href="#Instance_properties" class="nav-link">Instance properties</a>
+                        </li>
+                        <li>
+                            <a href="#Instance_methods" class="nav-link">Instance methods</a>
+                        </li>
+                        <li>
+                            <a href="#Reference" class="nav-link">Reference</a>
+                        </li>
+                    </ul>
+                </header>
+            </nav>
+        </div>
+        <main id="main-doc">
+            <section id="Description" class="main-section">
+                <header id="Description">
+                    <h1>
+                        Description
+                    </h1>
+                </header>
+                <h4 class="sub-head">
+                    The JavaScript Array class is a global object that is used in the construction of arrays; which
+                    are high-level, list-like objects.
+                </h4>
+                <p class="desc">
+                    Arrays are list-like objects whose prototype has methods to perform traversal and mutation
+                    operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since
+                    an array's length can change at any time, and data can be stored at non-contiguous locations in the
+                    array, JavaScript arrays are not guaranteed to be dense; this depends on how the programmer chooses
+                    to use them. In general, these are convenient characteristics; but if these features are not
+                    desirable for your particular use, you might consider using typed arrays.
+                </p>
+                <p class="desc">
+                    Arrays cannot use strings as element indexes (as in an associative array) but must use integers.
+                    Setting or accessing via non-integers using bracket notation (or dot notation) will not set or
+                    retrieve an element from the array list itself, but will set or access a variable associated with
+                    that array's object property collection. The array's object properties and list of array elements
+                    are separate, and the array's traversal and mutation operations cannot be applied to these named
+                    properties.
+                </p>
+                <div class="example">
+                    <h4 class="sub-head">
+                        Create an Array
+                    </h4>
+                    <pre>
+                        <code>
+let fruits = ['Apple', 'Banana'];
+console.log(fruits.length) // 2
+                        </code>
+                    </pre>
+                </div>
+                <div class="example">
+                    <h4 class="sub-head">
+                        Access an Array item using the index position
+                    </h4>
+                    <pre>
+                        <code>
+let first = fruits[0]
+// Applelet last = fruits[fruits.length - 1]
+// Banana
+                        </code>
+                    </pre>
+                </div>
+                <div class="example">
+                    <h4 class="sub-head">
+                        Loop over an Array
+                    </h4>
+                    <pre>
+                        <code>
+fruits.forEach(function(item, index, array) {
+    console.log(item, index)
+})
+// Apple 0
+// Banana 1
+                        </code>
+                    </pre>
+                </div>
+            </section>
+            <section class="main-section" id="Constructor">
+                <header id="Constructor">
+                    <h1>
+                        Constructor
+                    </h1>
+                </header>
+                <h4 class="sub-head">
+                    Array():
+                    Creates a new Array object.
+                </h4>
+                <p class="desc">
+                    The constructor function is used to create derived objects.
+                </p>
+                <div class="example">
+                    <h4 class="sub-head">
+                        Array literal notation
+                    </h4>
+                    <p class="desc">
+                        Arrays can be created using the literal notation:
+                    </p>
+                    <pre>
+                        <code>
+let fruits = ['Apple', 'Banana'];
+console.log(fruits.length); // 2
+console.log(fruits[0]);     // "Apple"
+                        </code>
+                    </pre>
+                </div>
+                <div class="example">
+                    <h4 class="sub-head">
+                        Array constructor with a single parameter
+                    </h4>
+                    <p class="desc">
+                        Arrays can be created using a constructor with a single number parameter. An array with its
+                        length property set to that number and the array elements are empty slots.
+                    </p>
+                    <pre>
+                        <code>
+let fruits = new Array(2);
+console.log(fruits.length); // 2
+console.log(fruits[0]);     // undefined
+                        </code>
+                    </pre>
+                </div>
+                <div class="example">
+                    <h4 class="sub-head">
+                        Array constructor with multiple parameters
+                    </h4>
+                    <p class="desc">
+                        If more than one argument is passed to the constructor, a new Array with the given elements is
+                        created.
+                    </p>
+                    <pre>
+                        <code>
+let fruits = new Array('Apple', 'Banana');
+console.log(fruits.length); // 2
+console.log(fruits[0]);     // "Apple"
+                        </code>
+                    </pre>
+                </div>
+            </section>
+            <section class="main-section" id="Static_properties">
+                <header id="Static_properties">
+                    <h1>
+                        Static properties
+                    </h1>
+                </header>
+                <h4 class="sub-head">
+                    <strong>get Array[@@species]</strong>:
+                    The constructor function is used to create derived objects.
+                </h4>
+                <p class="desc">
+                    The Array[@@species] accessor property returns the Array constructor.
+                </p>
+                <p class="desc">
+                    The species accessor property returns the default constructor for Array objects. Subclass
+                    constructors may override it to change the constructor assignment.
+                </p>
+                <div class="example">
+                    <h4 class="sub-head">
+                        Species in ordinary objects
+                    </h4>
+                    <p class="desc">
+                        The species property returns the default constructor function, which is the Array constructor
+                        for Array objects:
+                    </p>
+                    <pre>
+                        <code>
+Array[Symbol.species]; // function Array()
+                        </code>
+                    </pre>
+                </div>
+                <div class="example">
+                    <h4 class="sub-head">
+                        Species in derived objects
+                    </h4>
+                    <p class="desc">
+                        In a derived collection object (e.g. your custom array MyArray), the MyArray species is the
+                        MyArray constructor. However, you might want to overwrite this, in order to return parent Array
+                        objects in your derived class methods:
+                    </p>
+                    <pre>
+                        <code>
+class MyArray extends Array {
+    // Overwrite MyArray species to
+    the parent Array constructor
+    static get [Symbol.species]() {
+        return Array; 
+    }
+}
+                        </code>
+                    </pre>
+                </div>
+            </section>
+            <section class="main-section" id="Static_methods">
+                <header id="Static_methods">
+                    <h1>
+                        Static methods
+                    </h1>
+                </header>
+                <ul>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.from()
+                        </h4>
+                        <p class="desc">
+                            Array.from() lets you create Arrays from:
+                            <ul class="list">
+                                <li>array-like objects (objects with a length property and indexed elements); or</li>
+                                <li>iterable objects (objects such as Map and Set).</li>
+                            </ul>
+                        </p>
+                        <p class="desc">
+                            Array.from() has an optional parameter mapFn, which allows you to execute a map() function
+                            on each element of the array being created.
+                        </p>
+                        <p class="desc">
+                            More clearly, Array.from(obj, mapFn, thisArg)
+                            has the same result as Array.from(obj).map(mapFn, thisArg),
+                            except that it does not create an intermediate array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.isArray()
+                        </h4>
+                        <p class="desc">
+                            If the value is an Array, true is returned; otherwise, false is.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.of()
+                        </h4>
+                        <p class="desc">
+                            The Array.of() method creates a new Array instance from a variable number of arguments,
+                            regardless of number or type of the arguments.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="Instance_properties">
+                <header id="Instance_properties">
+                    <h1>
+                        Instance properties
+                    </h1>
+                </header>
+                <ul>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.length
+                        </h4>
+                        <p class="desc">
+                            The length property of an object which is an instance of type Array sets or returns the
+                            number of elements in that array. The value is an unsigned, 32-bit integer that is always
+                            numerically greater than the highest index in the array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype[@@unscopables]
+                        </h4>
+                        <p class="desc">
+                            A symbol containing property names to exclude from a with binding scope.
+                        </p>
+                        <p class="desc">
+                            The default array properties that are excluded from with bindings are:
+                        <ul class="list">
+                            <li>copyWithin()</li>
+                            <li>entries()</li>
+                            <li>fill()</li>
+                            <li>find()</li>
+                            <li>findIndex()</li>
+                            <li>includes()</li>
+                            <li>keys()</li>
+                            <li>values()</li>
+                        </ul>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="Instance_methods">
+                <header id="Instance_methods">
+                    <h1>
+                        Instance methods
+                    </h1>
+                </header>
+                <ul class="list">
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.concat()
+                        </h4>
+                        <p class="desc">
+                            Returns a new array that is this array joined with other array(s) and/or value(s).
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.copyWithin()
+                        </h4>
+                        <p class="desc">
+                            Copies a sequence of array elements within the array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.entries()
+                        </h4>
+                        <p class="desc">
+                            Returns a new Array Iterator object that contains the key/value pairs for each index in the
+                            array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.every()
+                        </h4>
+                        <p class="desc">
+                            Returns true if every element in this array satisfies the testing callbackFn.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.fill()
+                        </h4>
+                        <p class="desc">
+                            Fills all the elements of an array from a start index to an end index with a static value.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.filter()
+                        </h4>
+                        <p class="desc">
+                            Returns a new array containing all elements of the calling array for which the provided
+                            filtering callbackFn returns true.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.find()
+                        </h4>
+                        <p class="desc">
+                            Returns the found element in the array, if some element in the array satisfies the testing
+                            callbackFn, or undefined if not found.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.findIndex()
+                        </h4>
+                        <p class="desc">
+                            Returns the found index in the array, if an element in the array satisfies the testing
+                            callbackFn, or -1 if not found.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.forEach()
+                        </h4>
+                        <p class="desc">
+                            Calls a callbackFn for each element in the array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.includes()
+                        </h4>
+                        <p class="desc">
+                            Determines whether the array contains valueToFind, returning true or false as appropriate.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.indexOf()
+                        </h4>
+                        <p class="desc">
+                            Returns the first (least) index of an element within the array equal to searchElement, or -1
+                            if none is found.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.join()
+                        </h4>
+                        <p class="desc">
+                            Joins all elements of an array into a string.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.keys()
+                        </h4>
+                        <p class="desc">
+                            Returns a new Array Iterator that contains the keys for each index in the array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.lastIndexOf()
+                        </h4>
+                        <p class="desc">
+                            Returns the last (greatest) index of an element within the array equal to searchElement, or
+                            -1 if none is found.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.map()
+                        </h4>
+                        <p class="desc">
+                            Returns a new array containing the results of calling callbackFn on every element in this
+                            array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.pop()
+                        </h4>
+                        <p class="desc">
+                            Removes the last element from an array and returns that element.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.push()
+                        </h4>
+                        <p class="desc">
+                            Adds one or more elements to the end of an array, and returns the new length of the array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.reduce()
+                        </h4>
+                        <p class="desc">
+                            Apply a callbackFn against an accumulator and each value of the array (from left-to-right)
+                            as to reduce it to a single value.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.reduceRight()
+                        </h4>
+                        <p class="desc">
+                            Apply a callbackFn against an accumulator and each value of the array (from right-to-left)
+                            as to reduce it to a single value.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.reverse()
+                        </h4>
+                        <p class="desc">
+                            Reverses the order of the elements of an array in place. (First becomes the last, last
+                            becomes first.)These methods modify the array:
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.shift()
+                        </h4>
+                        <p class="desc">
+                            Removes the first element from an array and returns that element.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.slice()
+                        </h4>
+                        <p class="desc">
+                            Extracts a section of the calling array and returns a new array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.some()
+                        </h4>
+                        <p class="desc">
+                            Returns true if at least one element in this array satisfies the provided testing
+                            callbackFn.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.sort()
+                        </h4>
+                        <p class="desc">
+                            Sorts the elements of an array in place and returns the array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.splice()
+                        </h4>
+                        <p class="desc">
+                            Adds and/or removes elements from an array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.toLocaleString()
+                        </h4>
+                        <p class="desc">
+                            Returns a localized string representing the array and its elements. Overrides the
+                            Object.prototype.toLocaleString() method.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.toString()
+                        </h4>
+                        <p class="desc">
+                            Returns a string representing the array and its elements. Overrides the
+                            Object.prototype.toString() method.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.unshift()
+                        </h4>
+                        <p class="desc">
+                            Adds one or more elements to the front of an array, and returns the new length of the array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype.values()
+                        </h4>
+                        <p class="desc">
+                            Returns a new Array Iterator object that contains the values for each index in the array.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="sub-head">
+                            Array.prototype[@@iterator]()
+                        </h4>
+                        <p class="desc">
+                            Returns a new Array Iterator object that contains the values for each index in the array.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="Reference">
+                <header id="Reference">
+                    <h1>
+                        Reference
+                    </h1>
+                </header>
+                <p class="desc">
+                    All the documentation in this page is taken from
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Constructor"
+                        target="_blank">MDN</a>
+                </p>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>

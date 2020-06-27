@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+#navbar {
+  position: fixed;
+}
+
+#main-doc {
+  color: black;
+  margin-left: 13.8rem;
+  padding: 7rem;
+  background-color: ghostwhite;
+}
+
+h1 {
+  font-size: 3rem;
+  padding-left: 1rem;
+}
+
+.main-section > header > h1 {
+  border-left: 8px solid black;
+  margin: 1rem 0;
+}
+
+.sub-head {
+  display: block;
+  padding-top: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.desc,
+.example {
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  border-right: 1px solid gainsboro;
+}
+
+.nav-links li {
+  padding: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.example:last-child {
+  margin-bottom: 2rem;
+}
+
+.example > .sub-head {
+  padding: 1rem 0;
+}
+
+code {
+  margin: 0;
+  padding: 0;
+  height: inherit;
+  width: inherit;
+  overflow: hidden;
+}
+
+.list {
+  padding-left: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  #navbar {
+    position: relative;
+  }
+
+  #main-doc {
+    color: black;
+    margin-left: 0;
+    padding: 1rem;
+    background-color: ghostwhite;
+  }
+
+  .desc,
+  .example {
+    line-height: 1.3;
+  }
+}
