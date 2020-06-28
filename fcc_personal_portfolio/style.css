@@ -1,0 +1,220 @@
+html {
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+#welcome-section {
+  height: 100vh;
+  background-image: url("https://www.jakpost.travel/wimages/large/7-77388_wallpaper-laptop-cup-glasses-plant-laptop-wallpaper-hd.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#name {
+  display: inline-block;
+  font-size: 2.5rem;
+}
+
+#welcome-section h1,
+#welcome-section p {
+  color: #e7eff6;
+  transition: ease-out 2s;
+}
+
+#welcome-section h1 {
+  font-size: 3.5rem;
+}
+
+#welcome-section p {
+  font-size: 1.5rem;
+}
+
+#link {
+  text-decoration: none;
+  color: #b4b4b4;
+  font-weight: 900;
+}
+
+#link:hover {
+  border-bottom: 2px solid white;
+  color: coral;
+}
+
+#navbar {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  background-color: black;
+}
+
+ul li {
+    list-style: none;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.links li {
+  padding: 0.5rem 3.5rem;
+}
+
+#link {
+  padding: 0.5rem;
+}
+
+#projects {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projects-sect {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 2rem;
+}
+
+.project-tile {
+    width: 20vw;
+    height: 25rem;
+    margin: 3rem;
+    background-color: purple;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+}
+
+.project-tile:hover {
+    cursor: pointer;
+    transition: ease-in 0.2s;
+    transform: scale(1.05);
+}
+
+#project1 {
+    background-image: url('https://github.com/NandKumarGangai/10Days/blob/master/assets/apjabdulkalam.png?raw=true');
+}
+
+#project2 {
+    background-image: url('https://github.com/NandKumarGangai/10Days/blob/master/assets/contact_form.png?raw=true');
+}
+
+#project3 {
+    background-image: url('https://github.com/NandKumarGangai/10Days/blob/master/assets/drum_machina.png?raw=true');
+}
+
+#project4 {
+    background-image: url('https://github.com/NandKumarGangai/10Days/blob/master/assets/product_landing.png?raw=true');
+}
+
+#project5 {
+    background-image: url('https://github.com/NandKumarGangai/10Days/blob/master/assets/survey-form.png?raw=true');
+}
+
+#project6 {
+    background-image: url('https://github.com/NandKumarGangai/10Days/blob/master/assets/tech_documentation.png?raw=true');
+}
+
+.project-title {
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: blanchedalmond;
+    padding: 1rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    z-index: -1;
+}
+
+.source-links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo a, .source a {
+  /* display: none; */
+  text-decoration: none;
+  color: #ffeead;
+}
+
+.demo, .source {
+  opacity: 1.0;
+  background-color: #1e1f26;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 2px black;
+}
+/* #584f53 */
+.footer {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f7f0f1;
+  color: #584f53;
+}
+
+.footer div {
+  margin: 1rem 0;
+}
+
+#profile-link {
+  text-decoration: none;
+  margin: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #584f53;
+}
+
+#profile-link:hover {
+  color: #352f32;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 500px) {
+  #navbar {
+    width: 100vw;
+  }
+  .links li {
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+
+  #name {
+    text-align: center;
+  }
+
+  .project-tile {
+     padding: 1rem;
+     margin: 1rem;
+     width: 90vw;
+  }
+}
+ 
+
